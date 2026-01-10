@@ -5,21 +5,24 @@
   "type": "module",
   "main": "src/index.mjs",
   "dependencies": {
-    "@slack/rtm-api": "^5.0.5",
-    "@slack/web-api": "^5.10.0",
-    "axios": "^0.19.2",
+    "@slack/rtm-api": "^6.2.1",
+    "@slack/web-api": "^6.9.1",
+    "axios": "^1.12.0",
     "dotenv": "^8.2.0",
-    "eslint": "^7.3.1",
-    "jest": "^26.1.0",
+    "eslint": "^9.0.0",
+    "jest": "^30.0.0",
     "node-persist": "^3.1.0",
     "replaceall": "^0.1.6",
-    "rss-parser": "^3.8.0"
+    "rss-parser": "^3.13.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {},
   "scripts": {
     "test": "$NODE --experimental-vm-modules node_modules/jest/bin/jest.js",
     "start": "$NODE ./src/index.mjs",
-    "lint": "eslint src/*.mjs tests/*.mjs"
+    "lint": "eslint src/*.mjs tests/*.mjs",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "jest": {
     "testMatch": [
@@ -33,5 +36,6 @@
     ]
   },
   "author": "webkit.org",
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
+  "snyk": true
 }
